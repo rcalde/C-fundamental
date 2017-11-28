@@ -16,7 +16,7 @@ namespace Grades
             SpeechSynthesizer syn = new SpeechSynthesizer();
             syn.Speak("have a nice day");
 
-            GradeBook book=new GradeBook();
+            ThrowAwayGradeBook book=new ThrowAwayGradeBook();
             book.AddGrade(91);
             book.AddGrade(89.5f);
             book.AddGrade(75);
@@ -39,6 +39,12 @@ namespace Grades
             
             
         }
+
+        private static GradeBook CreateGradeBook()
+        {
+            return new ThrowAwayGradeBook();
+        }
+
         static void onNameChanged(string existing, string newname)
         {
             Console.WriteLine($"Grade book changing name from {existing} to {newname}");
